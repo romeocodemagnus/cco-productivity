@@ -226,7 +226,78 @@
 
 		        <div class="tab-pane fade reports" id="reports">
 		        	<h3>Configure Metrics</h3>
-				  	<div class="panel-group accordion" id="accordion">
+
+
+		        	<div class="panel-group accordion" id="accordion">
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title" ng-click="select_panel('first', 'metric', metric_panel_ids)" id="metricPanel1">
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent=".accordion" href=".collapseFour" id="metricPanelAnchor1">
+									Add, Delete, and Re-order
+									</a>
+								</h4>
+							</div>
+							<div id="collapseFour" class="panel-collapse collapse collapseFour" style="height: 0px;">
+								
+							</div>
+						</div> <!-- /.panel-default -->
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title" ng-click="select_panel('second', 'metric', metric_panel_ids)" id="metricPanel2">
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent=".accordion" href=".collapseFive" id="metricPanelAnchor2">
+									Configure Total
+									</a>
+								</h4>
+							</div>
+							<div id="collapseFive" class="panel-collapse collapse collapseFive" style="height: 0px;">
+								
+							</div>
+						</div> <!-- /.panel-default -->
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title" ng-click="select_panel('third', 'metric', metric_panel_ids)" id="metricPanel3">
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent=".accordion" href=".collapseSix" id="metricPanelAnchor3">
+									Set Goal
+									</a>
+								</h4>
+							</div>
+							<div id="collapseSix" class="panel-collapse collapse collapseSix" style="height: 0px;">
+								<div class="panel-body">
+						          	<form class="form-inline" role="form">
+										<div class="form-group" style="text-align:center;">
+											<input type="text" class="form-control" id="hour_alert"><br>
+											<label for="hour_alert">Hours Per Alert</label>
+										</div>
+										<i class="fa fa-times" style="vertical-align:top; font-size:15px; margin:0px 40px;"></i>
+										<div class="form-group" style="text-align:center;">
+											<h3>5</h3>
+											<label for="pwd">Investigators</label>
+										</div>
+										<i class="fa fa-times" style="vertical-align:top; font-size:15px; margin:0px 40px;"></i>
+										<div class="form-group" style="text-align:center;">
+											<input type="text" class="form-control" id="hour_day"><br>
+											<label for="hour_day">Hours Per Day</label>
+										</div>
+										<label style="vertical-align:top; font-size:15px; margin:0px 40px;">=</label>
+										<div class="form-group" style="text-align:center;">
+											<h3>183</h3>
+											<label for="pwd">Alerts Per Week</label>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div> <!-- /.panel-default -->	
+		        	
+		        	</div>
+
+
+
+
+
+				  	<!-- <div class="panel-group accordion" id="accordion">
 
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -243,8 +314,8 @@
 							          		<label class="col-md-3">Metric Name</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="metric-name" class="form-control" ng-model="new_metric.metric">
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div> 
+							          	</div> 
 							          	<div class="form-group">
 							          		<label class="col-md-3">Role Responsible</label>
 							          		<div class="col-md-7">
@@ -254,38 +325,38 @@
 							                        <option value="Manager" > Manager </option>
 							                        <option value="Admin" > Admin </option>
 							            		</select>
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div> 
+							          	</div>
 							          	<h4>Aging</h4>
 							          	<div class="form-group">
 							          		<label class="col-md-3">OK Status Label</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="ok-name" class="form-control" ng-model="new_metric.bin1">
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div>
 							          	<div class="form-group">
 							          		<label class="col-md-3">Caution Status Label</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="caution-name" class="form-control" ng-model="new_metric.bin2">
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div>
 							          	<div class="form-group">
 							          		<label class="col-md-3">Warning Status Label</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="warning-name" class="form-control" ng-model="new_metric.bin3">
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div>
 							          	<div class="form-group">
 							          		<div class="col-md-7 col-md-push-3">
 							          			<button type="submit" class="btn btn-primary">Save Changes</button>
 							          			&nbsp;
 							          			<button type="reset" class="btn btn-default">Cancel</button>
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div>
 		          					</form>
 								</div>
 							</div>
-						</div> <!-- /.panel-default -->
+						</div>
 
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -310,45 +381,45 @@
 									            			value="{{metric_bin}}" >{{ metric_bin.metric }}</option>
 									        	</select>
 									        </div>
-							          	</div> <!-- /.form-group -->
+							          	</div> 
 							          	<div class="form-group">
 							          		<label class="col-md-3">Role Responsible</label>
 							          		<div class="col-md-7">
     											<select id="Role" name="Role" class="form-control parsley-validated" data-required="true" ng-model="metric_bin.role">
 							                        <option ng-repeat="role in roles" ng-selected="metric_bin.role == role" value="{{role}} " > {{role}} </option>
 							            		</select>
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div> 
 							          	<h4>Aging</h4>
 							          	<div class="form-group">
 							          		<label class="col-md-3">OK Status Label</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="ok-name" class="form-control" ng-model="metric_bin.bin1">
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div> 
+							          	</div> 
 							          	<div class="form-group">
 							          		<label class="col-md-3">Caution Status Label</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="caution-name" class="form-control" ng-model="metric_bin.bin2">
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div>
 							          	<div class="form-group">
 							          		<label class="col-md-3">Warning Status Label</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="warning-name" class="form-control" ng-model="metric_bin.bin3">
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div>
 							          	<div class="form-group">
 							          		<div class="col-md-7 col-md-push-3">
 							          			<button type="submit" class="btn btn-primary">Save Changes</button>
 							          			&nbsp;
 							          			<button type="reset" class="btn btn-default">Cancel</button>
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div> 
 		          					</form>
 								</div>
 							</div>
-						</div> <!-- /.panel-default -->
+						</div> 
 
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -373,47 +444,47 @@
 									            			value="{{metric_bin}}" >{{ metric_bin.metric }}</option>
 									        	</select>
 									        </div>
-							          	</div> <!-- /.form-group -->
+							          	</div>
 							          	<div class="form-group">
 							          		<label class="col-md-3">Role Responsible</label>
 							          		<div class="col-md-7">
     											<select id="Role" name="Role" class="form-control parsley-validated" data-required="true" ng-model="metric_bin.role" disabled>
 							                        <option ng-repeat="role in roles" ng-selected="metric_bin.role == role" value="{{role}} " > {{role}} </option>
 							            		</select>
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div>
 							          	<h4>Aging</h4>
 							          	<div class="form-group">
 							          		<label class="col-md-3">OK Status Label</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="ok-name" class="form-control" ng-model="metric_bin.bin1" disabled>
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div>
 							          	<div class="form-group">
 							          		<label class="col-md-3">Caution Status Label</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="caution-name" class="form-control" ng-model="metric_bin.bin2" disabled>
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div> 
 							          	<div class="form-group">
 							          		<label class="col-md-3">Warning Status Label</label>
 							          		<div class="col-md-7">
 							          			<input type="text" name="warning-name" class="form-control" ng-model="metric_bin.bin3" disabled>
-							          		</div> <!-- /.col -->
-							          	</div> <!-- /.form-group -->
+							          		</div>
+							          	</div>
 							          	<div class="form-group">
 							          		<div class="col-md-7 col-md-push-3">
 							          			<button type="submit" class="btn btn-primary">Delete</button>
 							          			&nbsp;
 							          			<button type="reset" class="btn btn-default">Cancel</button>
-							          		</div> <!-- /.col -->
+							          		</div>
 							          	</div> 
 		          					</form>
 								</div>
 							</div>
-						</div> <!-- /.panel-default -->	
+						</div> 
 		        	
-		        	</div>
+		        	</div> -->
 		    	</div>
 		    	
 		        <div class="tab-pane fade actionlog" id="actionlog">
