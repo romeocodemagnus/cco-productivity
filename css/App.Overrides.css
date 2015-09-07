@@ -1,0 +1,365 @@
+/* ---------------------------------- */
+/* Common Treatments                  */
+/* ---------------------------------- */
+/* Text and General Layout */
+.text-sm { font-size: 12px; }
+.text-md { font-size: 14px; }
+.text-lg { font-size: 16px; }
+.text-xl { font-size: 18px; }
+.uppercase { text-transform: uppercase; }
+.nomargin-top { margin-top: 0 !important; }
+.nomargin-right { margin-right: 0 !important; }
+.nomargin-bottom { margin-bottom: 0 !important; }
+.nomargin-left { margin-left: 0 !important; }
+[class*="divider-vertical"] {
+  background-color: transparent;
+  background-image: url('../../Images/layout/Divider.Vertical.png');
+  background-repeat: repeat-y;
+}
+.divider-vertical-left { background-position: 0 0; }
+.howl { z-index: 2001; }
+/* Inner Content Headers */
+.button-content-header {
+  position: relative;
+  top: 28px;
+  right: 36px;
+}
+.portlet-header.text-center h1, .portlet-header.text-center h2, .portlet-header.text-center h3, .portlet-header.text-center h4, .portlet-header.text-center h5, .portlet-header.text-center h6 {
+  float: none;
+  }
+.btn.button-escalate {
+  position: relative;
+  top:28px; right:36px;
+}
+/* Tables */
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th { background-color: #e5e5e5; }
+/* Modals */
+.modal-styled .modal-header { background-color: #0069a6; }
+/* Dropdown Menus (e.g., Checkbox Lists) */
+.dropdown-toggle.full-width {
+  position: relative;
+  width: 100%;
+}
+.dropdown-toggle.full-width .caret {
+  position: absolute;
+  top: 45%;
+  right: 10px;
+}
+.dropdown-menu > li { /* override for readability */
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.dropdown-menu.checkbox-list .selection-children { padding-left: 30px; }
+/* Tokenized Search Elements */
+.select2-container-multi .select2-choices .select2-search-choice {
+  height: 24px;
+  padding: 4px 22px 2px 6px;
+  margin: 4px 1px 1px 2px;
+}
+/* Chart Colors */
+.chart-color0 { color: #d9534f; }
+.chart-color1 { color: #e69900; }
+.chart-color2 { color: #9c3; }
+.chart-color3 { color: #69c; }
+.chart-color4 { color: #669; }
+.chart-color5 { color: #96c; }
+.chart-color6 { color: #c69; }
+.chart-color7 { color: #e4784e; }
+.chart-color8 { color: #d96600; }
+.chart-color9 { color: #66b219; }
+.chart-color10 { color: #3366b2; }
+.chart-color11 { color: #336; }
+.chart-color12 { color: #6633b2; }
+.chart-color13 { color: #b23366; }
+.chart-color14 { color: #d63c27; }
+.chart-color15 { color: #f3cc80; }
+.chart-color16 { color: #cce699; }
+.chart-color17 { color: #b3cce6; }
+.chart-color18 { color: #b3b3cc; }
+.chart-color19 { color: #ccb3e6; }
+.chart-color20 { color: #e6b3cc; }
+.chart-color21 { color: #f2bca7; }
+/* Inbox */
+.inbox-message {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: default;
+}
+#InboxPreview .inbox-message:hover, #InboxPreview .inbox-message:active, #InboxPreview .inbox-message:focus,
+#MessageList .inbox-message:hover, #MessageList .inbox-message:active, #MessageList .inbox-message:focus {
+  background-color: #eee;
+}
+.inbox-message:last-child { border-bottom: 0 none transparent; }
+.inbox-message .message-sender { font-weight: bold; }
+.inbox-message .message-subject {
+  clear: both;
+  font-weight: bold;
+}
+/* ---------------------------------- */
+/* Top Breadcrumb                     */
+/* ---------------------------------- */
+#top-bar .nav > li.active, #top-bar .nav > li.breadcrumb {
+  background-color: #004a89;
+  color: #fff;
+  padding: 10px 10px 11px;
+  border-radius: 0;
+}
+/* ---------------------------------- */
+/* Top Bar Inbox Preview              */
+/* ---------------------------------- */
+#InboxPreview {
+  min-width: 360px;
+  color: #444;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#InboxPreview a.btn {
+  position: relative;
+  top: -3px;
+}
+#InboxPreview .inbox-messages {
+  border: 1px solid #ddd;
+  clear: both;
+}
+/* ---------------------------------- */
+/* Sidebar Breadcrumb Area            */
+/* ---------------------------------- */
+#SidebarBreadcrumb {
+  position: relative;
+  background: #004a89;
+  width: 240px;
+  height: 48px;
+  font-weight: 600;
+  color: #fff;
+  padding: 11px 18px;
+  border-bottom: 1px solid #004a89;
+  box-shadow: 0px 1px #6c6e73;
+  z-index: 15;
+}
+/* ---------------------------------- */
+/* Alerts Results                     */
+/* ---------------------------------- */
+[id*="Alerts"] table tbody tr:hover, [id*="Alerts"] table tbody tr:active, [id*="Alerts"] table tbody tr:focus {
+  cursor: pointer;
+}
+/* ---------------------------------- */
+/* Alert Details                      */
+/* ---------------------------------- */
+/* Overview */
+#AlertOverview .action-buttons a.btn {
+  display: inline-block;
+  width: 375px;
+  margin-top: 10px;
+}
+#AlertOverview .portlet-content div[class*="col-"] { padding-left: 0; }
+#AlertOverview .portlet-content a.btn { width: 110px; }
+#AlertOverview .dropdown-menu-form .dropdown-header, #AlertOverview .dropdown-menu-form .form-group {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#AlertOverview .dropdown-menu-form .dropdown-header {
+  font-size: 18px;
+  color: #000;
+}
+.trend-line-view-alert {
+  display: inline-block;
+  padding: 0 10px;
+}
+/* Account Activity */
+#AlertAccountActivity #AccountsSelection option[default], #AlertAccountActivity #AccountsSelection option.placeholder, #AlertAccountActivity [id*="AccountsSelection"] .select2-chosen {
+  color: #a9a8a6;
+  text-transform: uppercase;
+  }
+/* Collected Data */
+#AlertCollectedData [id*="CollectedData_TokenizedSearch_Inclusive"] ul, #AlertCollectedData [id*="CollectedData_TokenizedSearch_Exclusive"] ul {
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+}
+#AlertCollectedData .search-filter-highlight {
+  display: inline-block;
+  background-color: #f0ad4e;
+  font-weight: 600;
+  padding-right: 4px;
+  padding-left: 4px;
+  border-radius: 2px;
+}
+#AlertCollectedData #DataView_ListArea #FilteredResults h4 {
+  font-weight: normal;
+  font-style: italic;
+  }
+#AlertCollectedData #DataView_ListArea #FilteredResults .filtered-result {
+  display: inline-block;
+  position: relative;
+  line-height: 24px;
+  padding: 0 0 0 5px;
+  border: 1px solid #999;
+  margin: 0 10px 10px 0;
+  white-space: nowrap;
+  }
+#AlertCollectedData #DataView_ListArea #FilteredResults .filtered-result .badge {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  }
+#AlertCollectedData #DataView_ListArea #FilteredResults .filtered-result button.label.button-show {
+  background-color: #eee;
+  font-weight: normal;
+  color: #55565a;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 0 none transparent;
+  border-radius: 0;
+  margin: 0 0 -1px 5px;
+  }
+#AlertCollectedData #DataView_List_Results {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+#AlertCollectedData #DataView_List_Results .row.dt-rb {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+#AlertCollectedData #DataView_List_Results tr.result-row { cursor: pointer; }
+#AlertCollectedData #DataView_List_Results .result-details {
+  display: none;
+  position: relative;
+}
+#AlertCollectedData #DataView_List_Results .result-details .button-hide-details {
+  position: absolute;
+  bottom:20px;
+  right:15px;
+}
+#AlertCollectedData #DataView_ChartArea #Summary_CollectedData div { margin-top: 20px; }
+
+/* Comment and Report */
+#AlertCommentReport #AlertEvidence { background: transparent url('../../Images/layout/Divider.Vertical.png') repeat-y 15px 0; }
+#AlertCommentReport #AlertEvidence div.report-data-details { margin: 10px 15px; }
+#AlertCommentReport #SubmissionButtons a.btn { width: 312px; }
+#AlertCommentReport #AlertEvidence i.fa-plus-circle {
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  right: -3px;
+  background-color: #fff;
+  font-size: 28px;
+  color: #5CB85C;
+}
+#InvestigationActivityLogModal table td { font-size: 12px; }
+#SimilarCommentsModal .modal-dialog { width: 780px; }
+#SimilarCommentsModal .comment-selection-description {
+  display: inline-block;
+  position: relative;
+  left: 5px;
+  margin-top: -24px;
+}
+#SimilarCommentsModal .comment-preview-content > .row { margin-right: -18px; }
+#SimilarCommentsModal .comment-preview-content > .row p, #SimilarCommentsModal .comment-preview-content > .row > div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#SimilarCommentsModal .comment-preview-content > .row i.fa-clipboard {
+  position: absolute;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+#SimilarCommentsModal .comment-preview-content > .row:hover {
+  background-color: #0069A6;
+  color: #fff;
+  cursor: pointer;
+}
+#AlertCommentToolbar #SaveCommentChangesButton,
+#AlertCommentToolbar #CancelCommentChangesButton,
+#AlertCommentContent_EditMode {
+  display: none;
+}
+#AlertCommentContent_EditMode textarea {
+  max-width: 100%;
+  min-height: 55px;
+  color: #777;
+  margin-bottom: 15px;
+}
+#AlertCommentContent_EditMode_AdditionalNotes { color: #555; }
+/* ---------------------------------- */
+/* Performance Dashboard              */
+/* ---------------------------------- */
+/* Charts/Chart Areas */
+[id*="CompletedAlerts_"] [class*="-stat"] h3, [id*="EscalatedAlerts_"] [class*="-stat"] h3 {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+div[id$="ChartArea"] div[id$="Chart"] {
+  min-width: 400px;
+  width: 100%;
+  min-height: 250px;
+  height: 100%;
+}
+.flotr-legend, flotr-legend-bg { display: none; }
+/* Annotations */
+div.annotations-add, div.annotations-saved {
+  margin-top: 15px;
+}
+div.annotations-recent, div.annotations-past { margin-bottom: 15px; }
+div.annotations-past .radio-list {
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#SavedAnnotationsModal .datepicker { z-index: 2000 !important; }
+/* ---------------------------------- */
+/* Inbox                              */
+/* ---------------------------------- */
+#Inbox .inbox-messages {
+  height: 700px;
+  max-height: 700px;
+  border: 1px solid #ddd;
+  margin-left: 0;
+  margin-right: 0;
+}
+#Inbox #MessageList {
+  height: auto;
+  max-height: 698px;
+  overflow-y: auto;
+  padding-left: 0;
+  padding-right: 0;
+  }
+#Inbox #MessageList .inbox-message.active { background-color: #eee; }
+#Inbox #MessageArea {
+  position: relative;
+  height: 698px;
+  max-height: 698px;
+  padding-left: 0;
+  padding-right: 0;
+  border-left: 1px solid #ddd;
+}
+#Inbox #MessagePane, #Inbox #NewMessagePane {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 10px;
+  margin: 0 auto;
+  }
+#Inbox #MessagePane .button-delete { margin-top: -8px; }
+#Inbox #MessageReply, #Inbox #MessageCompose {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #eee;
+  min-height: 199px;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  margin: -1px 0 0 0;
+}
+#Inbox #MessageReply textarea, #Inbox #MessageCompose textarea { height: 100px; }
+#Inbox #MessageReply input[type="submit"], #Inbox #MessageCompose input[type="submit"] {
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+}
+#Inbox #MessageReply .fileupload-exists, #Inbox #MessageCompose .fileupload-exists { float: left; }

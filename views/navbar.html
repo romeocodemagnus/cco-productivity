@@ -1,0 +1,112 @@
+<div id="wrapper" ng-controller="NavController">
+	<header id="header">
+        <!-- Alacer Logo -->
+        <h1 id="site-logo">
+            <a href="/">
+                <img src="img/logo.png" alt="Alacer" />
+            </a>
+        </h1>
+        <!-- Navbar Toggle - Disabled -->
+        <a  href="javascript:;" 
+            data-toggle="collapse" 
+            data-target=".top-bar-collapse" 
+            id="top-bar-toggle" 
+            class="navbar-toggle collapsed">
+            <i class="fa fa-cog"></i>
+        </a>
+        <!-- Sidebar Toggle - Disabled -->
+        <a  href="javascript:;" 
+            data-toggle="collapse" 
+            data-target=".sidebar-collapse" 
+            id="sidebar-toggle" 
+            class="navbar-toggle collapsed">
+            <i class="fa fa-reorder"></i>
+        </a>
+    </header>
+	<!-- /header -->
+  	<!-- Top/Navigation Bar -->
+    <nav id="top-bar" class="collapse top-bar-collapse">
+        <!-- bootstrap alert messages. -->
+        <div  id="success-alert" 
+            class="alert alert-success alert-dismissable" 
+            role="alert" 
+            style="position:fixed; z-index:999999999; margin-top:10px;" >
+          <button type="button" 
+              class="close" 
+              data-dismiss="alert" 
+              aria-label="Close">
+              <span>×</span>
+          </button>
+          Data Entered And Submitted!
+        </div>
+    	  <!-- Current User Display/Links -->
+      	<ul class="nav navbar-nav pull-right">
+          	<!-- Inbox Preview -->
+          	<!-- Authenticated User and User-Specific Links -->
+          	<li class="dropdown">
+            	<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+              		<i class="fa fa-user"></i>
+              		{{ user.firstName }} {{ user.lastName }}
+              		<span class="caret"></span>
+            	</a>
+            	<ul class="dropdown-menu" role="menu">
+                	<!-- Profile Link -->
+              		<li ng-click="view_settings()">
+                  		<a>
+                  			<i class="fa fa-gears"></i>
+                  			&nbsp;&nbsp;Settings
+                  		</a>
+                	</li>
+              		<!-- Logout -->
+                	<li ng-click="logout_user()">
+                  		<a>
+                    		<i class="fa fa-sign-out"></i>
+                    		&nbsp;&nbsp;Logout
+                  		</a>
+                	</li>
+            	</ul>
+          	</li>
+      	</ul>
+    </nav>
+    <!-- /#top-bar -->
+    <!-- Contextual Navigation and Sidebar Breadcrumb -->
+    <div id="sidebar-wrapper" class="collapse sidebar-collapse">
+      	<!-- Sidebar Breadcrumb -->
+      	<div id="SidebarBreadcrumb" style="width: 100%">
+          	<h4 style="left: 38px; position: absolute">Production Analytics</h4>
+      	</div>
+      	<!-- Contextual Navigation -->
+      	<nav id="sidebar">
+          	<ul id="main-nav" class="open-active" style="cursor:pointer;">
+            	<li ng-class="{'active': active == 1}" ng-click="selected_view(1, 'user.dashboard')">
+                	<a>
+                  		<i class="fa fa-exclamation-circle"></i>
+                  		{{ 'DASHBOARD_OVERVIEW' | translate }}
+                	</a>
+            	</li>
+            	<li ng-class="{'active': active == 2}" ng-click="selected_view(2, 'user.trends')">
+                	<a>
+                  	<i class="fa fa-bar-chart-o"></i>
+                  	{{ 'TRENDS' | translate }}
+                	</a>
+            	</li>
+            	<li ng-class="{'active': active == 3}" ng-click="selected_view(3, 'user.dataentry')">
+                	<a>
+                  		<i class="fa fa-pencil-square-o"></i>
+                 	 	{{ 'ENTER_DATA' | translate }}
+                	</a>
+            	</li>
+          	</ul>
+      	</nav>
+      	<!-- #sidebar -->
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <div id="content" style="min-height:1000px !important;">
+        <div ui-view></div>
+    </div>
+    <footer id="footer">
+    	<ul class="nav pull-right">
+          	<li>Copyright © 2015, Alacer Group.</li>
+        </ul>
+    </footer>
+</div>

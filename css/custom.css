@@ -1,0 +1,61 @@
+.bold {
+	font-weight: bold;
+}
+
+.center {
+	text-align: center;
+}
+
+.console {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 10px;
+}
+
+.message {
+	color: red;
+}
+
+#configureGoogle, #configureOther {
+	display: none;
+	background-color: #fffff0;
+}
+
+#content-container .nopad {
+	margin-bottom: 0px !important;
+}
+
+#extractData {
+	display: none;
+}
+
+#table_listQueries tbody tr:hover {
+	cursor: pointer;
+}
+
+#selectQueries {
+	display: none;
+}
+
+#noResults {
+	display: none;
+}
+
+#login h5 {
+	color: #990000;
+}
+
+/* print css */
+
+@media screen {
+	canvas { -webkit-print-color-adjust: exact; }
+}
+
+@media print {
+	.bar1 { background-color: #5cb85c !important; -webkit-print-color-adjust: exact; }
+}
+@media print {
+	.bar2 { background-color: #f0ad4e !important; -webkit-print-color-adjust: exact; }
+}
+@media print {
+	.bar3 { background-color: #d9534f !important; -webkit-print-color-adjust: exact; }	
+}

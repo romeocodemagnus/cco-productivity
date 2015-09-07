@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Alacer | Productivity</title>
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="custom/datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="bower_components/datatables/media/css/dataTables.tableTools.css"> 
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" type="text/css" href="custom/fileupload/bootstrap-fileupload.css">
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dataTables.tableTools.css"> -->
+
+
+    <!-- Custom CSS -->
+    <link href="css/App.css" rel="stylesheet">
+    <link href="css/App.Overrides.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.4.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="bower_components/bootstrap/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/bootstrap.min.js"></script>
+    <script src="custom/datepicker/bootstrap-datepicker.js"></script>
+    <script src="bower_components/bootstrap/jquery.dataTables.min.js"></script>
+    <script src="bower_components/bootstrap/dataTables.bootstrap.js"></script>
+    <script src="bower_components/bootstrap/dataTables.tableTools.js"></script>
+    <script src="custom/fileupload/bootstrap-fileupload.js"></script>
+
+    <!-- AngularJS -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+    <script src="custom/sparkline/jquery.sparkline.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+    <!-- Highcharts -->
+    <script src="bower_components/highchart/highstock.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/host.js"></script>
+    <script src="js/utils.js"></script>
+
+    <!-- i18n Js -->
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="custom/translation.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/login.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/dataentry.js"></script>
+    <script src="js/trends.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/app.js"></script>
+    <script type='text/javascript'>
+        (function (d, t) {
+            var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            bh.type = 'text/javascript';
+            bh.src = '//www.bugherd.com/sidebarv2.js?apikey=yp82spoxomxx2lnnuplaxg';
+            s.parentNode.insertBefore(bh, s);
+        })(document, 'script');
+    </script>
+
+
+</head>
+<body>
+	<div ui-view></div>
+</body>
+</html>

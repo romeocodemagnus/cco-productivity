@@ -1,0 +1,230 @@
+<div id="content-header">
+    <div class="row">
+      	<div class="col-sm-6">
+        	<h1>Enter Data</h1>
+      	</div>
+      	<div class="col-sm-5" style="margin-top: 15px;">
+        	<label for="validateSelect">Metric</label>
+        	<select id="metricTrends" 
+            		name="metricTrends" 
+            		class="form-control" 
+            		ng-model="metric_bin"
+            		ng-change="selected_bin(metric_bin)" >
+                <option ng-repeat="metric_bin in metric_bins" 
+                    	ng-selected="default_metric.metric == metric_bin.metric"
+                    	value="{{metric_bin}}" >{{ metric_bin.metric }}</option>
+            </select>
+      	</div>
+    </div>
+</div>
+
+<div id="content-container">
+    <div class="row">
+      	<div class="col-sm-12">
+          	<!-- <div 	id="datafilealert" 
+          			class="alert alert-success alert-dismissable" 
+          			role="alert"
+          			ng-if="success_upload">
+            	<button type="button" 
+            			class="close" 
+            			data-dismiss="alert" 
+            			aria-label="Close" 
+            			ng-click="clear_fields()" >
+              		<span>×</span>
+            	</button>
+           	 	Data Uploaded Successfully!
+         	</div>
+         	<div 	id="datauploadalert" 
+          			class="alert alert-danger alert-dismissable" 
+          			role="alert" 
+          			ng-if="failed_alert" >
+            	<button type="button" 
+            			class="close" 
+            			data-dismiss="alert" 
+            			aria-label="Close" 
+            			ng-click="clear_fields()" >
+              		<span>×</span>
+            	</button>
+            	<strong>Error!</strong> A problem occurred while submitting the data.
+          	</div> -->
+
+	      	<div class="portlet">
+				<div class="portlet-header">
+	          		<h3>Instructions</h3>
+	        	</div>
+	        	<div class="portlet-content">
+	              	<p>Select a metric above.  Enter data for the most recent week, or upload a .csv file in the approved format.  To correct historical data or enter data from previous weeks, contact the administrator for assistance.</p>
+		        </div>
+	      	</div>
+      	</div>
+    </div>
+
+    <div class="row">
+      	<div class="col-sm-5">
+      		<div class="portlet">
+        		<div class="portlet-header">
+              		<h3>Enter Data</h3>
+        		</div>
+        		<div class="portlet-content">
+        			<form 	id="metricForm" 
+							class="form-horizontal" 
+							ng-submit="add_metric(metric)">
+
+			            <h4>Overall</h4>
+			            <div class="form-group">
+			                <label class="col-md-4">Date</label>
+			                <div class="col-md-8">
+			                	<div class="input-group date" >
+								  	<input 	type="text" 
+								  			class="form-control" 
+								  			ng-model="metric.date" 
+								  			required >
+								  	<span class="input-group-addon">
+								  		<i class="fa fa-calendar"></i>
+								  	</span>
+								</div>
+					            <!-- <div 	id="date"
+				                		class="input-append input-group date" 
+				                		datetimez 
+				                		ng-model="metric.date" >
+				                  	<input 	data-format="yyyy-MM-dd" 
+				                  			class="form-control" 
+				                  			type="text" 
+				                  			id="input1" 
+				                  			name="input1" 
+				                  			required>
+				                  	<span 	class="add-on input-group-addon ">
+				                    	<i 	class="fa fa-calendar"></i>
+				                  	</span>
+				                </div> -->
+			                </div>
+			            </div>
+
+			            <div class="form-group">
+			                <label class="col-md-4">Received</label>
+			                <div class="col-md-8">
+			                  	<input 	id="Received" 
+			                  			type="text" 
+			                  			name="received" 
+			                  			class="form-control" 
+			                  			placeholder="(Number)"
+			                  			ng-model="metric.received" 
+			                  			numbers-only="numbers-only"
+			                  			required>
+			                </div>
+			            </div>
+
+			            <div class="form-group"> 
+			                <label class="col-md-4">Completed</label>
+			                <div class="col-md-8">
+			                  	<input 	type="text" 
+			                  			class="form-control" 
+			                  			name="completed" 
+			                  			placeholder="(Number)" 
+			                  			ng-model="metric.completed" 
+			                  			numbers-only="numbers-only"
+			                  			required>
+			                </div>
+			            </div>
+
+			            <h4>In Queue</h4>
+
+			            <div class="form-group" ng-if="show_bin1">              
+			                <label class="col-md-4" id="Bin1Label">{{ bin1 }}</label>
+			                <div class="col-md-8">
+			                  	<input 	type="text" 
+			                  			class="form-control" 
+			                  			name="ok" 
+			                  			placeholder="(Number)" 
+			                  			ng-model="metric.ok" 
+			                  			numbers-only="numbers-only"
+			                  			required>
+			                </div>
+			            </div>
+			            <div class="form-group" ng-if="show_bin2"> 
+			                <label class="col-md-4" id="Bin2Label">{{ bin2 }}</label>  
+			                <div class="col-md-8">
+			                  	<input 	type="text" 
+			                  			class="form-control" 
+			                  			name="caution" 
+			                  			placeholder="(Number)" 
+			                  			ng-model="metric.caution" 
+			                  			numbers-only="numbers-only"
+			                  			required>
+			                </div>
+			            </div>
+			            <div class="form-group" ng-if="show_bin3">   
+			                <label class="col-md-4" id="Bin3Label">{{ bin3 }}</label> 
+			                <div class="col-md-8">
+			                  	<input 	type="text" 
+			                  			class="form-control" 
+			                  			name="danger" 
+			                  			placeholder="(Number)" 
+			                  			ng-model="metric.danger" 
+			                  			numbers-only="numbers-only"
+			                  			required>
+			                </div>
+			            </div>  
+
+			            <div class="form-group">   
+			                <label class="col-md-4" id="Comments">Comments</label> 
+			                <div class="col-md-8">
+			                  	<input 	type="text" 
+			                  			class="form-control" 
+			                  			name="comments" 
+			                  			placeholder="Comments"
+			                  			ng-model="metric.comments" >
+			                </div>
+			            </div>
+			          	<div style="text-align: center">
+			              	<button type="submit" 
+			              			id="submitData" 
+			              			class="btn btn-primary">Submit</button>
+			          	</div>
+			            <br>
+			        </form>
+		        </div>
+      		</div>
+      	</div>
+
+      	<div class="col-sm-2">
+        	<h4 style="text-align: center"> - OR  - </h4>
+      	</div>
+
+      	<div class="col-sm-5">
+      		<div class="portlet">
+        		<div class="portlet-header">
+              		<h3>
+                		Upload File
+              		</h3>
+              	</div>
+
+        		<div class="portlet-content">
+        			<form ng-submit="upload_file(new_file)">
+	          			<div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden" value="" name="">
+	            			<div class="input-group">
+	              				<div class="form-control">
+	                				<i class="fa fa-file fileupload-exists"></i> 
+	                				<span class="fileupload-preview"></span>
+	              				</div>
+	              				<div class="input-group-btn">
+	                				<a href="#" class="btn btn-default fileupload-exists btn btn-danger" data-dismiss="fileupload" style="border-color: #004a89">Remove</a>
+	                				<span class="btn btn-default btn-file btn btn-primary">
+	                					<span class="fileupload-new">Select file</span>
+	                					<span class="fileupload-exists">Change</span>
+	                  					<input type="file" id="file">
+	                				</span>
+	              				</div>
+	            			</div>
+	          			</div>
+	          			<div style="text-align: center">
+	              			<button type="submit" id="submitDataUpload" class="btn btn-primary">Submit</button>
+	          			</div>
+        			</form>
+          			<!--Closes Portlet Content -->
+        		</div>
+        		<!-- closes portlet -->
+      		</div>
+      	</div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div id="content-header">
+    <div class="row">
+      	<div class="col-sm-6">
+        	<h1>Trends</h1>
+      	</div>
+      	<div class="col-sm-5" style="margin-top: 15px;">
+        	<label for="metricTrends">Metric</label>
+	   	 	<select id="metricTrends" 
+        			name="metricTrends" 
+        			class="form-control" 
+        			ng-model="metric_bin"
+        			ng-change="select_bin(metric_bin)" >
+            	<option ng-repeat="metric_bin in metric_bins" 
+            			ng-selected="selected_bin == metric_bin.metric"
+            			value="{{metric_bin}}" >{{ metric_bin.metric }}</option>
+        	</select>
+      	</div>
+    </div>
+</div>
+
+<div id="content-container">
+  	<div id="AlertsPerformance_TabsContent" class="tab-content">
+      	<div class="row">
+            <div class="col-md-6 col-sm-12">              
+              	<highchart id="chart1" config="chartConfig" class="span10" ></highchart>
+            </div>
+            <div class="col-md-6 col-sm-12" id="trendTable">
+              	<highchart id="chart1" config="chartConfig2" class="span10" ></highchart>
+            </div>
+      	</div>
+      	<div class="row">
+        	<h3 style="text-align: center; margin-top: 20px">Historical Data</h3>
+        	<div class="col-md-12" id="trendTable">
+       			<div class="table-responsive" id="div_table" >
+        			<table 	id="dashboard" 
+        					style="text-align: center;" 
+							datatable="ng"
+							dt-options="trendsDT"
+      						dt-column-defs="trendsDTColumnDefs"						
+							class="table table-striped table-bordered table-hover table-highlight table-checkable dataTable-helper dataTable no-footer datatable-columnfilter">
+						<thead>
+					      	<tr cls="dataTable-filter-row">
+					      		<th class="sorting-desc" style="text-align: center; width: 10%;">Date</th>
+						        <!-- <th width="45%" style="width: 87px;">Date</th> -->
+						        <th style="text-align: center; width: 10%;">Received</th>
+						        <th style="text-align: center; width: 10%;">Completed</th>
+						        <th style="text-align: center; width: 10%;">In Queue</th>
+						        <td style="text-align: center; width: 10%;"><span>OK</span></td>
+			                	<td style="text-align: center; width: 10%;"><span>Caution</span></td>
+			                	<td style="text-align: center; width: 10%;"><span>Warning</span></td>
+						        <th style="text-align: center; width: 15%;">Aging</th>
+						        <th style="text-align: center; width: 45%;">Comments</th>
+					      	</tr>
+		    			</thead>
+		    			<tbody style="cursor:pointer;">
+						    <tr ng-repeat ="metric in metrics" >
+						        <td class="sorting_1" ng-click="select_date(metric.date)" style="text-align:left;"><span>{{ metric.date }}</span></td>
+						        <td ng-click="select_date(metric.date)"><span>{{ metric.received }}</span></td>
+						        <td ng-click="select_date(metric.date)"><span>{{ metric.completed }}</span></td> 
+						        <td ng-click="select_date(metric.date)"><span>{{ metric.inqueue }}</span></td>
+						        <td><span>{{ metric.ok }}</span></td>
+				                <td><span>{{ metric.caution }}</span></td>
+				                <td><span>{{ metric.danger }}</span></td>
+						        <td ng-click="select_date(metric.date)">
+							        <progress>
+							            <bar  value="metric.ok_progress" 
+							                  popover="{{ metric.bin1 }}: {{ metric.ok }}" 
+							                  popover-trigger="mouseenter"  
+							                  class="progress-bar-success bar1">
+							            </bar>
+							            <bar  value="metric.c_progress" 
+							                  popover="{{ metric.bin2 }}: {{ metric.caution }}" 
+							                  popover-trigger="mouseenter"  
+							                  class="progress-bar-warning bar2">
+							            </bar>
+							            <bar  value="metric.d_progress" 
+							                  popover="{{ metric.bin3 }}: {{ metric.danger }}" 
+							                  popover-trigger="mouseenter" 
+							                  class="progress-bar-danger bar3">
+							            </bar>
+							        </progress>
+						        </td>
+						        <td ng-click="select_date(metric.date)" style="text-align: left;"><span>{{ metric.comments }}</span></td> 
+						    </tr>
+		    			</tbody>
+					</table>
+      			</div>
+				<pagination class="pull-right" 
+							total-items="total_items" 
+							ng-model="current_page" 
+							num-pages="num_pages" 
+							items-per-page="limit" 
+							ng-change="page_changed(current_page)"></pagination>
+      		</div>
+      	</div>
+  	</div>
+</div>
