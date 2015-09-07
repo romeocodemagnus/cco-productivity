@@ -24,7 +24,7 @@
 		        	</a>
 		        </li>
 		        <li class="">
-		        	<a href="" data-toggle="tab">
+		        	<a href=".manage_team" data-toggle="tab">
 		        		<i class="fa fa-users"></i> 
 		        		&nbsp;&nbsp;Manage Teams
 		        	</a>
@@ -292,6 +292,104 @@
 						</div> <!-- /.panel-default -->	
 		        	</div>
 		    	</div>
+
+
+		    	<div class="tab-pane fade manage_team" id="manage_team">
+		        	<h3>Manage Teams</h3>
+		        	<div class="panel-group accordion" id="accordion">
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title" ng-click="select_panel('first', 'metric', metric_panel_ids)" id="metricPanel1">
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent=".accordion" href=".collapseSeven" id="metricPanelAnchor1">
+									Add Team
+									</a>
+								</h4>
+							</div>
+							<div id="collapseSeven" class="panel-collapse collapse collapseSeven" style="height: 0px;">
+								<div class="panel-body">
+									<div class="form-group">
+						          		<label class="col-md-3">Team Name</label>
+						          		<div class="col-md-7">
+						          			<input type="text" name="team-name" class="form-control" >
+						          		</div> <!-- /.col -->
+						          	</div> <!-- /.form-group -->
+						          	<br>
+						          	<br>
+									<div class="form-group">
+						          		<label class="col-md-3">Location</label>
+						          		<div class="col-md-7">
+											<select id="Role" name="Location" class="form-control parsley-validated" data-required="true">
+						                        <option value="" disabled> (Please Select One) </option>
+						            		</select>
+						          		</div> <!-- /.col -->
+						          	</div> <!-- /.form-group -->
+						          	<br>
+						          	<br>
+						          	<div class="form-group">
+						          		<label class="col-md-3">Assign Manager</label>
+						          		<div class="col-md-7">
+											<select id="Role" name="assign-manager" class="form-control parsley-validated" data-required="true" >
+						                        <option value="" disabled> (Please Select One) </option>
+						            		</select>
+						          		</div> <!-- /.col -->
+						          	</div> <!-- /.form-group -->
+						          	<br>
+						          	<br>
+								</div>
+							</div>
+						</div> <!-- /.panel-default -->
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title" ng-click="select_panel('second', 'metric', metric_panel_ids)" id="metricPanel2">
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent=".accordion" href=".collapseEight" id="metricPanelAnchor2">
+									Update Team
+									</a>
+								</h4>
+							</div>
+							<div id="collapseEight" class="panel-collapse collapse collapseEight" style="height: 0px;">
+								
+							</div>
+						</div> <!-- /.panel-default -->
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title" ng-click="select_panel('third', 'metric', metric_panel_ids)" id="metricPanel3">
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent=".accordion" href=".collapseNine" id="metricPanelAnchor3">
+									Delete Team
+									</a>
+								</h4>
+							</div>
+							<div id="collapseNine" class="panel-collapse collapse collapseNine" style="height: 0px;">
+								<div class="panel-body">
+						          	<form class="form-inline" role="form">
+										<div class="form-group" style="text-align:center;">
+											<input type="text" class="form-control" id="hour_alert"><br>
+											<label for="hour_alert">Hours Per Alert</label>
+										</div>
+										<i class="fa fa-times" style="vertical-align:top; font-size:15px; margin:0px 40px;"></i>
+										<div class="form-group" style="text-align:center;">
+											<h3>5</h3>
+											<label for="pwd">Investigators</label>
+										</div>
+										<i class="fa fa-times" style="vertical-align:top; font-size:15px; margin:0px 40px;"></i>
+										<div class="form-group" style="text-align:center;">
+											<input type="text" class="form-control" id="hour_day"><br>
+											<label for="hour_day">Hours Per Day</label>
+										</div>
+										<label style="vertical-align:top; font-size:15px; margin:0px 40px;">=</label>
+										<div class="form-group" style="text-align:center;">
+											<h3>183</h3>
+											<label for="pwd">Alerts Per Week</label>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div> <!-- /.panel-default -->	
+		        	</div>
+		    	</div>
+
 		    	
 		        <div class="tab-pane fade actionlog" id="actionlog">
 		        	<h3>View Log</h3>
