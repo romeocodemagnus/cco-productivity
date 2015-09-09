@@ -112,7 +112,7 @@ angular.module('settings-module', [])
 	$scope.roles 			= ['Admin','Analyst','Manager'];
 	$scope.user_panel_ids 	= ['panel1', 'panelAnchor1', 'panel2', 'panelAnchor2', 'panel3', 'panelAnchor3'];
 	$scope.metric_panel_ids = ['metricPanel1', 'metricPanelAnchor1', 'metricPanel2', 'metricPanelAnchor2', 'metricPanel3', 'metricPanelAnchor3'];
-	$scope.manage_team_ids 	= ['teamPanel1', 'teamPanelAnchor1', 'teamPanel2', 'teamPanelAnchor2', 'teamPanel3', 'teamPanelAnchor3'];
+	$scope.manage_team_ids = ['teamPanel1', 'teamPanelAnchor1', 'teamPanel2', 'teamPanelAnchor2', 'teamPanel3', 'teamPanelAnchor3'];
 
 	function init () {
 		SessionService.alert_messages();
@@ -322,7 +322,7 @@ angular.module('settings-module', [])
 		} else if (settings == 'user') {
 			ids = panel_ids;
 		} else if (settings == 'team') {
-			ids = panel_ids;
+			ids = panel_ids
 		}
 
 		if (ids) {
