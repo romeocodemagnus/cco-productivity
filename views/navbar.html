@@ -38,14 +38,31 @@
         </div>
  	    <!-- Current User Display/Links -->
         <ul class="nav navbar-nav">
+            <li><a>All Production</a></li>
             <li><a>AML Alerts</a></li>
             <li><a>HRCU</a></li>
             <li><a>FCB</a></li>
+            <li><a>Sanctions</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <!-- Inbox Preview -->
             <!-- Authenticated User and User-Specific Links -->
-       	    <li class="dropdown pull-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+                    <i class="fa fa-university"></i>
+                    LBBW
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li ng-click="view_settings()">
+                        <a><i class="fa fa-gears"></i>&nbsp;&nbsp;Settings</a>
+                    </li>
+                    <li ng-click="logout_user()">
+                        <a><i class="fa fa-sign-out"></i>&nbsp;&nbsp;Logout</a>
+                    </li>
+                </ul>
+            </li>
+       	    <li class="dropdown">
          	    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
            		    <i class="fa fa-user"></i>
            		   {{ user.firstName }} {{ user.lastName }}
@@ -85,6 +102,7 @@
                         aria-expanded="false">
                         <i class="fa fa-bar-chart-o"></i> 
                         {{'TRENDS' | translate}} 
+                        <i class="fa fa-caret-down pull-right" style="margin-right:0px;"></i> 
                     </a>
                     <ul id="trend_options" 
                         class="collapse open-active" 
