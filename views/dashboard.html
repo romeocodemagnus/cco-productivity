@@ -86,7 +86,88 @@
 			          		<h3>Historic Averages</h3>
 			        	</div>
 			        	<div class="portlet-content">
-			              	
+			        		<div class="col-md-12">
+			        			<div class="row">
+					              	<center>
+						        		<div class="col-sm-6">
+							        		<div class="row">
+							        			<h6>Today's Avg.</h6>
+								     			<div 	id="myStatHistoric1" 
+								     					data-dimension="70" 
+								     					data-text="700" 
+								     					data-width="5" 
+								     					data-fontsize="10" 
+								     					data-percent="10" 
+								     					data-fgcolor="#303D7D" 
+								     					data-fill="gray" 
+								     					data-total="1000" 
+								     					data-part="700" 
+								     					data-icon="long-arrow-up" 
+								     					data-icon-size="10" 
+								     					data-icon-color="#303D7D">
+								     			</div>
+							        		</div>
+							        	</div>
+						        		<div class="col-sm-6">
+						        			<div class="row">
+						        				<h6>Week Avg.</h6>
+							        			<div 	id="myStatHistoric2" 
+								     					data-dimension="70" 
+								     					data-text="700" 
+								     					data-width="5" 
+								     					data-fontsize="10" 
+								     					data-percent="10" 
+								     					data-fgcolor="#303D7D" 
+								     					data-fill="gray" 
+								     					data-total="1000" 
+								     					data-part="700" 
+								     					data-icon="long-arrow-up" 
+								     					data-icon-size="10" 
+								     					data-icon-color="#303D7D">
+								     			</div>
+						        			</div>
+							        	</div>
+							        	<div class="col-sm-6">
+							        		<div class="row">
+							        			<h6>Month Avg.</h6>
+								     			<div 	id="myStatHistoric3" 
+								     					data-dimension="70" 
+								     					data-text="700" 
+								     					data-width="5" 
+								     					data-fontsize="10" 
+								     					data-percent="10" 
+								     					data-fgcolor="#303D7D" 
+								     					data-fill="gray" 
+								     					data-total="1000" 
+								     					data-part="700" 
+								     					data-icon="long-arrow-up" 
+								     					data-icon-size="10" 
+								     					data-icon-color="#303D7D">
+								     			</div>
+							        		</div>
+							        	</div>
+						        		<div class="col-sm-6">
+						        			<div class="row">
+						        				<h6>YTD Avg.</h6>
+							        			<div 	id="myStatHistoric4" 
+								     					data-dimension="70" 
+								     					data-text="700" 
+								     					data-width="5" 
+								     					data-fontsize="10" 
+								     					data-percent="10" 
+								     					data-fgcolor="#303D7D" 
+								     					data-fill="gray" 
+								     					data-total="1000" 
+								     					data-part="700" 
+								     					data-icon="long-arrow-up" 
+								     					data-icon-size="10" 
+								     					data-icon-color="#303D7D">
+								     			</div>
+						        			</div>
+							        	</div>
+					        		</center>
+			        			</div>
+			        		</div>
 				        </div>
 		        	</div>
 		    	</div>
@@ -137,5 +218,9 @@
 <script>
 	$(document).ready(function() {
         $('#myStat').circliful();
+    	$('#myStatHistoric1').circliful();
+    	$('#myStatHistoric2').circliful();
+    	$('#myStatHistoric3').circliful();
+    	$('#myStatHistoric4').circliful();
     });
 </script>
