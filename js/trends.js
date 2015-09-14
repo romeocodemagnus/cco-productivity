@@ -85,6 +85,9 @@ angular.module('trends-module',[])
                 caution.data.push(ca_trend);
                 danger.data.push(d_trend);
             };
+            console.log(JSON.stringify(received));
+            console.log(JSON.stringify(inqueue));
+            console.log(JSON.stringify(completed));
         }, function (error) {
             console.log(error);
         });
