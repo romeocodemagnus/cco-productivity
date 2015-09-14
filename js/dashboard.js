@@ -198,26 +198,49 @@ angular.module('dashboard-module',[])
 
 	init();
 	$scope.get_metric_bins();
+
+
+
+	/*/////////////// temporary js codes ////////////////*/
+
+	$scope.chartConfig = {
+	  	options: {
+	    	chart: {
+	    	  	type: 'line'
+	    	},
+	    	plotOptions: {
+	    	  	series: {
+	    	    	stacking: ""
+	    	  	}
+	    	}
+	  	},
+	  	series: [{
+	      	name: "Some data 2",
+	      	data: [ 5, 2, 2, 3, 5 ],
+	      	type: "column",
+	      	id: "series-2"
+	    },{
+	      	name: "My Super Column",
+	      	data: [ 1, 1, 2, 3, 2 ],
+	      	type: "column",
+	      	id: "series-3"
+	    },{
+	      	name: "Some data 3",
+	      	data: [ 3, 1, null, 5, 2 ],
+	      	connectNulls: true,
+	      	id: "series-1"
+	    }],
+	  	title: {
+	    	text: "Hello"
+	  	},
+	  	credits: {
+	    	enabled: true
+	  	},
+	  	loading: false,
+        size: {
+            height: 250
+        },
+	};
+
+	/*/////////////// temporary js codes ////////////////*/
 })
-
-// .directive('datetimez', function() {
-
-//     return {
-//         restrict: 'A',
-//         require : 'ngModel',
-//         link: function(scope, element, attrs, ngModelCtrl) {
-//           element.datetimepicker({
-//             dateFormat:'dd-mm-yyyy',
-//            language: 'en',
-//            pickTime: false,
-//            startDate: '01-11-2013',      // set a minimum date
-//            endDate: '01-11-2030'          // set a maximum date
-//           }).on('changeDate', function(e) {
-//             ngModelCtrl.$setViewValue(e.date);
-//             scope.$apply();
-//             $(".bootstrap-datetimepicker-widget").hide();
-//           });
-//         }
-//     };
-
-// })
